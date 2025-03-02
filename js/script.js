@@ -33,6 +33,23 @@ for (let i = 0; i < buttons.length; i++) {
         else {
             alert('Do not excess');
         }
+        document.getElementById('btn-clear').addEventListener('click', function () {
+            container.remove();
+        })
     })
 }
+document.getElementById('btnTask-6').addEventListener('click', function (event) {
+    event.preventDefault();
+    alert('Congrats!! You Have Completed all The Current Task');
+})
 
+document.addEventListener('DOMContentLoaded', function () {
+    const dateDiv = document.getElementById('date-current');
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocalDateString('en-US', {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+    dateDiv.innerText = formattedDate;
+})
