@@ -43,13 +43,24 @@ document.getElementById('btnTask-6').addEventListener('click', function (event) 
     alert('Congrats!! You Have Completed all The Current Task');
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dateDiv = document.getElementById('date-current');
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocalDateString('en-US', {
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-    });
-    dateDiv.innerText = formattedDate;
-})
+const currentDate = new Date();
+
+const formattedDate = currentDate.toDateString();
+
+document.getElementById("date-current").innerText = formattedDate;
+
+// Function to generate a random color
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to change the background color on button click
+function changeBackgroundColor() {
+    document.documentElement.style.backgroundColor = getRandomColor();
+}
+
